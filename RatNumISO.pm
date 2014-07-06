@@ -1,5 +1,5 @@
 
-package RatNumUSD;
+package RatNumISO;
 
 use strict;
 use warnings;

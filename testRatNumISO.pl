@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use  RatNumUSD;
+use  RatNumISO;
 
 ####################
 ### Main Program ###
@@ -24,8 +24,8 @@ while ( $command ne "Q" ) {
           unless ( $1 );
     }
     exit if ( $frac01 eq "exit" || $frac02 eq "exit" );
-    my $f1 = RatNum->new($frac01);
-    my $f2 = RatNum->new($frac02);
+    my $f1 = RatNumISO->new($frac01);
+    my $f2 = RatNumISO->new($frac02);
 
     while ( $command ne "Q" ) {
         print "\nChoose: (A)dd, (S)ubtract, (M)ultiply, (D)ivide\n";
@@ -33,19 +33,19 @@ while ( $command ne "Q" ) {
         print "Answer: ";
         chomp( $command = <> );
         if ( $command eq "A" ) {
-            my $total = RatNum->new( $f1 + $f2 );
+            my $total = RatNumISO->new( $f1 + $f2 );
             print "\n$f1 + $f2 = $total\n";
         }
         elsif ( $command eq "S" ) {
-            my $total = RatNum->new( $f1 - $f2 );
+            my $total = RatNumISO->new( $f1 - $f2 );
             print "\n$f1 - $f2 = $total\n";
         }
         elsif ( $command eq "M" ) {
-            my $total = RatNum->new( $f1 * $f2 );
+            my $total = RatNumISO->new( $f1 * $f2 );
             print "\n$f1 * $f2 = $total\n";
         }
         elsif ( $command eq "D" ) {
-            my $total = RatNum->new( $f1 / $f2 );
+            my $total = RatNumISO->new( $f1 / $f2 );
             print "\n$f1 / $f2 = $total\n";
         }
         elsif ( $command eq "E" ) {
